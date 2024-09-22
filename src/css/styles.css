@@ -1,3 +1,88 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 16px;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  gap: 24px;
+}
+/*.feedback-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  width: 453px;
+  height: 296px;
+  padding: 24px;
+}*/
+
+.feedback-form {display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  width: 360px;
+  height: 192px;
+}
+.label-text {font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;}
+
+.data-email {
+  width: 360px;
+  padding-left: 12px;
+}
+.data-message {
+    width: 360px;
+    padding-left: 12px;
+  }
+
+.button-submit {border-radius: 8px;
+  border-color: #4e75ff;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #fff;
+}
+.button-submit:hover,
+.button-submit:focus {
+  background-color: #6c8cff;
+}
+
+
 /**
   |============================
   | include css partials with
