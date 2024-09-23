@@ -3,7 +3,7 @@ import simpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-export const formData = {
+export let formData = {
     email: "",
     message: ""
 };
@@ -18,35 +18,19 @@ export function onInputChange(event) {
 form.addEventListener('input', onInputChange);
 export function loadFromLocalStorage() {
   const savedData = localStorage.getItem('feedback-form-state');
-  if (savedData) {
-    formData = JSON.parse(savedData);
+  if (savedData) {formData = JSON.parse(savedData);
     form.elements.email.value = formData.email;
-    form.elements.message.value = formData.message;
-  }
-   if (!formData.email || !formData.message) {
-    alert('Fill please all fields');
-    return;
-  }
-};
+    form.elements.message.value = formData.message;}};
+
 loadFromLocalStorage();
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log('Form submitted with data:', formData);
+  const email = form.elements.email.value.trim();
+  const message = form.elements.message.value.trim();
+  if (email === "" || message === "") { return console.log('Fill please all fields') };
+  console.log(formData);
   localStorage.removeItem('feedback-form-state');
   form.reset();
-  formData = {email: "", message: ""
-  };
+  formData = { email: "", message: "" };
+  
 });
-
-
-
-//const registerForm = document.querySelector("form");
-//registerForm.addEventListener("submit", handleSubmit);
-//function handleSubmit(event) {
-//    event.preventDefault();
- //   const form = event.target;
- //   const email = form.elements.email.value;
-  //  const password = form.elements.password.value;
- //   if (email === "" || password === "") { return console.log('All form fields must be filled in') }
-//console.log(`Email: ${email}, Password: ${password}`);
-//form.reset();}
