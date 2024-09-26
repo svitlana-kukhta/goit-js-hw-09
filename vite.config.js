@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./*.html',),
+        input: glob.sync('./src/index.html', './src/1-gallery.html', './src/2-form.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -39,7 +39,7 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       injectHTML(),
-      FullReload(['./**/*.html']),
+      FullReload(['.src/**/**.html']),
       SortCss({
         sort: 'mobile-first',
       }),
